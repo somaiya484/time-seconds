@@ -1,25 +1,22 @@
-let second = 0;
+let seconds = 0;
+let timer = false;
 
-let timer = false
-function start(){
+let start = () =>{
     timer = true;
-    stopWatch()
-
+    setTimer()
+}
+let stop = () =>{
+    timer = false
+}
+let reset = () =>{
+    seconds = 0;
+    document.getElementById('time').innerHTML = '0';
 }
 
-function stop(){
-    timer = false;
-}
-
-function reset(){
-    second = 0;
-    document.getElementById('time').innerHTML = "0";
-}
-
-function stopWatch(){
+let setTimer = () =>{
     if(timer === true){
-        second = second + 1;
-        document.getElementById('time').innerHTML = second;
-        setTimeout("stopWatch()", 1000)
+        seconds++;
+        document.getElementById('time').innerHTML = seconds;
+        setTimeout(setTimer, 1000);
     }
 }
