@@ -9,8 +9,11 @@ let stop = () =>{
     timer = false
 }
 let reset = () =>{
+    clearInterval(setTimer)
+
     seconds = 0;
     document.getElementById('time').innerHTML = '0';
+
 }
 
 let setTimer = () =>{
